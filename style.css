@@ -1,0 +1,237 @@
+@font-face {
+  font-family: "Favorit";
+  src:
+  url("assets/fonts/Favorit.woff2") format('woff2'),
+  url("assets/fonts/Favorit.woff")  format("woff");
+}
+@font-face {
+  font-family: "Maxi";
+  src:
+  url("assets/fonts/Maxi.woff2") format('woff2'),
+  url("assets/fonts/Maxi.woff")  format("woff");
+}
+
+@keyframes bordersTR {
+  0% {
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 200px;
+  }
+  100% {
+    border-top-left-radius: 24px;
+    border-top-right-radius: 300px;
+    border-bottom-left-radius: 300px;
+    border-bottom-right-radius: 300px;
+  }
+}
+
+@keyframes color {
+  0% {
+    background-color: #E8EDED;
+  }
+  100% {
+    background-color: #EFEAE7;
+  }
+}
+
+
+body{
+  background-color: white;
+  overflow: hidden;
+  margin: 0px;
+  padding: 20px;
+
+  animation-name: color;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+div.dot{
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  width: 40px;
+  height: 40px;
+  background-color: red;
+  border-radius: 100%;
+  transition-property: box-shadow, background-color;
+  transition-duration: .25s;
+}
+div.dot:hover{
+  background-color: white;
+  box-shadow: 0px 0px 16px red;
+}
+
+#svg{
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  border: 1px solid red;
+  animation-duration: 3.5s;
+  border-radius: 200px;
+  animation-name: bordersTR;
+
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+
+
+  width: calc(100vw - 40px);
+  height: calc(100vh - 40px);
+  /* background-color: blue; */
+  /*  */
+
+}
+
+svg{
+
+  width: 40vw;
+  /* background-color: red; */
+
+}
+
+svg rect{
+  fill: rgba(0,0,0,0);
+}
+.exception{
+  fill: none;
+}
+svg line{
+  stroke: red;
+}
+.svgFloor{
+  fill: rgba(0,0,0,0);
+  transition: fill;
+  transition-duration: .1s;
+}
+#elevator{
+  fill: red;
+}
+
+.extension{
+  fill: rgba(0,0,0,0);
+  stroke: black;
+}
+.extension:hover{
+  fill: #C4C4C4;
+}
+
+#lobbySVG:hover{
+ fill: #F56145;
+}
+#fl1SVG:hover{
+  fill: #F8E158;
+}
+#stairsSVG:hover{
+fill: #5CC48B;
+}
+#fl3SVG:hover{
+fill: #B482FF;
+}
+#fl4SVG:hover{
+fill: #FBB0F3;
+}
+#fl5SVG:hover{
+fill: #3DA7EC;
+}
+
+div.label{
+  pointer-events: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+
+
+  font-size: 200px;
+  font-family: "Maxi";
+  display: none;
+}
+
+div.contentBody{
+  position: absolute;
+  display: flex;
+  top: 0px;
+  left: 0px;
+
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+  /* backdrop-filter: blur(8px); */
+  /* background-color: blue; */
+  display: none;
+}
+#exitButton{
+
+  height: 40px;
+  width: 40px;
+  background-color: #F8E158;
+  border-radius: 100%;
+  transition-property: box-shadow, background-color;
+  transition-duration: .25s;
+}
+#exitButton:hover{
+  background-color: white;
+  box-shadow: 0px 0px 20px #F8E158;
+}
+div.exitButtonCont{
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+div.exitButtonLabel{
+  margin-left: 8px;
+  font-family: "Favorit";
+  font-size: 24px;
+  line-height: 1;
+  display: none
+}
+ div.popup{
+  display: none;
+  /* background-color: red; */
+  width: 55%;
+
+
+  height: calc(100vh - 40px);;
+  overflow-y: scroll;
+ }
+ p{
+   font-family: "Favorit";
+   font-size: 28px;
+ }
+ h3{
+   font-family: "Maxi";
+   font-size: 96px;
+   margin: 0px;
+   margin-top: 20px;
+   padding: 0px;
+   line-height: 1;
+ }
+ h4{
+   font-family: "Maxi";
+   font-size: 48px;
+   margin: 0px;
+   margin-bottom: 40px;
+ }
+
+ p::-webkit-scrollbar {
+  display: none;
+}
+p {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
